@@ -38,7 +38,7 @@ resource "azurerm_network_interface" "testing" {
     name                          = "internal"
     subnet_id                     = azurerm_subnet.testing.id
     private_ip_address_allocation = "Dynamic"
-    public_ip_address_id          = "/subscriptions/dacf4b60-de1a-459b-a858-27b25d7d14ba/resourceGroups/testRG/providers/Microsoft.Network/publicIPAddresses/acceptanceTestPublicIp1"
+    public_ip_address_id          = "/subscriptions/******/resourceGroups/testRG/providers/Microsoft.Network/publicIPAddresses/acceptanceTestPublicIp1"
   }
 }
 
@@ -49,7 +49,7 @@ resource "azurerm_linux_virtual_machine" "testing" {
   location                        = azurerm_resource_group.testing.location
   size                            = "Standard_F2"
   admin_username                  = "adminuser"
-  admin_password                  = "Radhey@654321"
+  admin_password                  = "azure@78652"
   disable_password_authentication = false
   network_interface_ids = [
     azurerm_network_interface.testing.id,
